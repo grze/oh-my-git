@@ -177,7 +177,7 @@ PS1="${PROMPT_CONTEXT}\n ${C_1}\W${C_Yellow} \! > \[\033[0m\]"
 
             # where
 
-            prompt="${prompt}${white_on_black}>${red_on_black}"
+            prompt="${prompt}${white_on_black}> ${red_on_black}"
             if [[ $detached == true ]]; then
                 prompt+=$(enrich_append $detached $omg_detached_symbol "${white_on_black}")
                 prompt+=$(enrich_append $detached "(${current_commit_hash:0:7})" "${red_on_black}")
