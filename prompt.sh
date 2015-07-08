@@ -158,7 +158,7 @@ PS1="${PROMPT_CONTEXT}\n ${C_1}\W${C_Yellow} \! > \[\033[0m\]"
 
         if [[ $is_a_git_repo == true ]]; then
             # on filesystem
-            prompt="${white_on_black} <"
+            prompt="${white_on_black} < "
 #            prompt+=$(enrich_append $has_stashes $omg_has_stashes_symbol "${yellow_on_black}")
 
             prompt+=$(enrich_append $has_untracked_files $omg_has_untracked_files_symbol "${red_on_black}")
