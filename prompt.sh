@@ -62,22 +62,22 @@ PS1="${PROMPT_CONTEXT}\n ${C_1}\W${C_Yellow} \! > \[\033[0m\]"
     : ${omg_second_line:='\w • '}
 
     : ${omg_is_a_git_repo_symbol:=''}
-    : ${omg_has_untracked_files_symbol:=''}        #                ?    
+    : ${omg_has_untracked_files_symbol:=''}        #                ?    
     : ${omg_has_adds_symbol:=''}
     : ${omg_has_deletions_symbol:=''}
-    : ${omg_has_cached_deletions_symbol:=''}
-    : ${omg_has_modifications_symbol:=''}
-    : ${omg_has_cached_modifications_symbol:=''}
+    : ${omg_has_cached_deletions_symbol:=''}
+    : ${omg_has_modifications_symbol:=''}
+    : ${omg_has_cached_modifications_symbol:=''}
     : ${omg_ready_to_commit_symbol:=''}            #   →
-    : ${omg_is_on_a_tag_symbol:=''}                #   
-    : ${omg_needs_to_merge_symbol:='ᄉ'}
-    : ${omg_detached_symbol:=''}
-    : ${omg_can_fast_forward_symbol:=''}
-    : ${omg_has_diverged_symbol:=''}               #   
-    : ${omg_not_tracked_branch_symbol:=''}
+    : ${omg_is_on_a_tag_symbol:=''}                #   
+    : ${omg_needs_to_merge_symbol:=''}
+    : ${omg_detached_symbol:=''}
+    : ${omg_can_fast_forward_symbol:='→'}
+    : ${omg_has_diverged_symbol:=''}               #   
+    : ${omg_not_tracked_branch_symbol:='?'}
     : ${omg_rebase_tracking_branch_symbol:=''}     #   
-    : ${omg_merge_tracking_branch_symbol:=''}      #  
-    : ${omg_should_push_symbol:=''}                #    
+    : ${omg_merge_tracking_branch_symbol:=''}      #  
+    : ${omg_should_push_symbol:=''}                #    
     : ${omg_has_stashes_symbol:=''}
 
     : ${omg_default_color_on:='\[\033[1;37m\]'}
@@ -198,7 +198,7 @@ PS1="${PROMPT_CONTEXT}\n ${C_1}\W${C_Yellow} \! > \[\033[0m\]"
                             prompt+=$(enrich_append true "-${commits_behind} ${white_on_black}${omg_can_fast_forward_symbol}${red_on_black} --" "${red_on_black}")
                         fi
                         if [[ $commits_ahead -gt 0 ]]; then
-                            prompt+=$(enrich_append true "-- ${white_on_black}${omg_should_push_symbol}${red_on_black}  +${commits_ahead}" "${red_on_black}")
+                            prompt+=$(enrich_append true " -- ${white_on_black}${omg_should_push_symbol}${red_on_black}  +${commits_ahead}" "${red_on_black}")
                         fi
                         if [[ $commits_ahead == 0 && $commits_behind == 0 ]]; then
                             prompt+=$(enrich_append true " --   -- " "${red_on_black}")
